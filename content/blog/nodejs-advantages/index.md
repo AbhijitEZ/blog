@@ -1,13 +1,24 @@
 ---
-title: My Second Post!
+title: Nodejs Advantages!
+description: Some of the most helpful things regarding nodejs.
 date: "2015-05-06T23:46:37.121Z"
 ---
 
-Wow! I love blogging so much already.
+## Nodejs ?
 
-Did you know that "despite its name, salted duck eggs can also be made from
-chicken eggs, though the taste and texture will be somewhat different, and the
-egg yolk will be less rich."?
-([Wikipedia Link](https://en.wikipedia.org/wiki/Salted_duck_egg))
+Nodejs is event-driven, asynchronous programming language which is used widely these days.
+Nodejs runs of the V8 engine that is used in Google chrome. So we have the same language we
+use in browser on out machine, Javascript. ✨
 
-Yeah, I didn't either.
+
+## Nodejs Advantages
+
+There are many advantanges for nodejs listing some of the main ones.
+
+- **Asynchronous** -> Makes the thread doesnot stop for jumping in case of async operations.
+- **Event Driven** -> Entire Nodejs is based on that, every trigger in event would have a listener.
+- **Mircro-services** -> Very easy to implement and scale.
+- **RealTime Web app**
+- **Chat programs**
+- **Social media apps**
+- **Multiplayer games** 
