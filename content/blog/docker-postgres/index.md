@@ -1,6 +1,6 @@
 ---
 title: Postgres inside docker
-date: "2015-05-01T22:12:03.284Z"
+date: "2021-06-29T22:12:03.284Z"
 description: "Using the docker to quickly config the postgres database"
 ---
 
