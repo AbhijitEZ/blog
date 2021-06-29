@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Technical Blog]]></title><description><![CDATA[Techincal Blog that covers Javascript and other programming stuffs.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 29 Jun 2021 10:24:02 GMT</lastBuildDate><item><title><![CDATA[React Hooks]]></title><description><![CDATA[React one of the important and most used Frontend Framework in the web
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Technical Blog]]></title><description><![CDATA[Techincal Blog that covers Javascript and other programming stuffs.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 29 Jun 2021 10:26:37 GMT</lastBuildDate><item><title><![CDATA[Postgres inside docker]]></title><description><![CDATA[Docker Docker is containerized approach in the current web market, where we can deploy
+out application on any cloud wihtout much effort…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/docker-postgres/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/docker-postgres/</guid><pubDate>Tue, 29 Jun 2021 22:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;Docker&lt;/h2&gt;
+&lt;p&gt;Docker is containerized approach in the current web market, where we can deploy
+out application on any cloud wihtout much effort. Most of cloub companies like AWS,
+GCD, etc already have sevice for docker and container.&lt;/p&gt;
+&lt;h3&gt;What are container?&lt;/h3&gt;
+&lt;p&gt;Container are virutal os inside main system as Virtual system but much fast and stable
+compared to other VMs. Docker Image are the blueprint which is used to created the
+container, they are like the class (Image) and its object (Container).&lt;/p&gt;
+&lt;h2&gt;Postgres&lt;/h2&gt;
+&lt;p&gt;Postgres is relation database used mostly these days. It’s fast, efficient and developer friendly
+I usually prefer postgres with respect to other dbs. There are other great alternatives as well
+like Mysql and so on.&lt;/p&gt;
+&lt;h2&gt;Docker Compose&lt;/h2&gt;
+&lt;p&gt;Docker compose allows to start multiple images/container in same instances and also allow communication
+between them.&lt;/p&gt;
+&lt;h2&gt;Docker Compose for postgres with pg-admin interface&lt;/h2&gt;
+&lt;p&gt;We are going to create the postgres docker compose file with pg-admin interface.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre class=&quot;language-yml&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;3.8&quot;&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; pg_container
+    &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; postgres
+    &lt;span class=&quot;token key atrule&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; always
+    &lt;span class=&quot;token key atrule&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;POSTGRES_USER&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; root
+      &lt;span class=&quot;token key atrule&quot;&gt;POSTGRES_PASSWORD&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; root
+      &lt;span class=&quot;token key atrule&quot;&gt;POSTGRES_DB&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; test_db
+    &lt;span class=&quot;token key atrule&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;5432:5432&quot;&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ./postgres&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/var/lib/postgresql/data
+  &lt;span class=&quot;token key atrule&quot;&gt;pgadmin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; pgadmin4_container
+    &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; dpage/pgadmin4
+    &lt;span class=&quot;token key atrule&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; always
+    &lt;span class=&quot;token key atrule&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;PGADMIN_DEFAULT_EMAIL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; admin@admin.com
+      &lt;span class=&quot;token key atrule&quot;&gt;PGADMIN_DEFAULT_PASSWORD&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; root
+    &lt;span class=&quot;token key atrule&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;5050:80&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[React Hooks]]></title><description><![CDATA[React one of the important and most used Frontend Framework in the web
 development for past few years. React Class based component In the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/react-hooks/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/react-hooks/</guid><pubDate>Sat, 19 Jun 2021 17:40:32 GMT</pubDate><content:encoded>&lt;p&gt;React one of the important and most used Frontend Framework in the web
 development for past few years.&lt;/p&gt;
 &lt;h2&gt;React Class based component&lt;/h2&gt;
@@ -46,7 +86,7 @@ function name.&lt;/p&gt;
   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; updatedValue&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Nodejs Advantages!]]></title><description><![CDATA[Nodejs ? Nodejs is event-driven, asynchronous programming language which is used widely these days.
-Nodejs runs of the V8 engine that is…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/nodejs-advantages/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/nodejs-advantages/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;h2&gt;Nodejs ?&lt;/h2&gt;
+Nodejs runs of the V8 engine that is…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/nodejs-advantages/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/nodejs-advantages/</guid><pubDate>Fri, 28 May 2021 23:46:37 GMT</pubDate><content:encoded>&lt;h2&gt;Nodejs ?&lt;/h2&gt;
 &lt;p&gt;Nodejs is event-driven, asynchronous programming language which is used widely these days.
 Nodejs runs of the V8 engine that is used in Google chrome. So we have the same language we
 use in browser on out machine, Javascript. ✨&lt;/p&gt;
@@ -60,44 +100,4 @@ use in browser on out machine, Javascript. ✨&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;Chat programs&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Social media apps&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Multiplayer games&lt;/strong&gt; &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Postgres inside docker]]></title><description><![CDATA[Docker Docker is containerized approach in the current web market, where we can deploy
-out application on any cloud wihtout much effort…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/docker-postgres/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/docker-postgres/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;Docker&lt;/h2&gt;
-&lt;p&gt;Docker is containerized approach in the current web market, where we can deploy
-out application on any cloud wihtout much effort. Most of cloub companies like AWS,
-GCD, etc already have sevice for docker and container.&lt;/p&gt;
-&lt;h3&gt;What are container?&lt;/h3&gt;
-&lt;p&gt;Container are virutal os inside main system as Virtual system but much fast and stable
-compared to other VMs. Docker Image are the blueprint which is used to created the
-container, they are like the class (Image) and its object (Container).&lt;/p&gt;
-&lt;h2&gt;Postgres&lt;/h2&gt;
-&lt;p&gt;Postgres is relation database used mostly these days. It’s fast, efficient and developer friendly
-I usually prefer postgres with respect to other dbs. There are other great alternatives as well
-like Mysql and so on.&lt;/p&gt;
-&lt;h2&gt;Docker Compose&lt;/h2&gt;
-&lt;p&gt;Docker compose allows to start multiple images/container in same instances and also allow communication
-between them.&lt;/p&gt;
-&lt;h2&gt;Docker Compose for postgres with pg-admin interface&lt;/h2&gt;
-&lt;p&gt;We are going to create the postgres docker compose file with pg-admin interface.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre class=&quot;language-yml&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;3.8&quot;&lt;/span&gt;
-&lt;span class=&quot;token key atrule&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;token key atrule&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token key atrule&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; pg_container
-    &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; postgres
-    &lt;span class=&quot;token key atrule&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; always
-    &lt;span class=&quot;token key atrule&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;token key atrule&quot;&gt;POSTGRES_USER&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; root
-      &lt;span class=&quot;token key atrule&quot;&gt;POSTGRES_PASSWORD&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; root
-      &lt;span class=&quot;token key atrule&quot;&gt;POSTGRES_DB&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; test_db
-    &lt;span class=&quot;token key atrule&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;5432:5432&quot;&lt;/span&gt;
-    &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ./postgres&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/var/lib/postgresql/data
-  &lt;span class=&quot;token key atrule&quot;&gt;pgadmin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token key atrule&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; pgadmin4_container
-    &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; dpage/pgadmin4
-    &lt;span class=&quot;token key atrule&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; always
-    &lt;span class=&quot;token key atrule&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;token key atrule&quot;&gt;PGADMIN_DEFAULT_EMAIL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; admin@admin.com
-      &lt;span class=&quot;token key atrule&quot;&gt;PGADMIN_DEFAULT_PASSWORD&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; root
-    &lt;span class=&quot;token key atrule&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;5050:80&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item></channel></rss>
