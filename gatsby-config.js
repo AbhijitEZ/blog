@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Technical Blog`,
+    title: `Blogs`,
     author: {
       name: `Abhijit Ezhava`,
       summary: `loves to create things and experiment new things`,
     },
-    description: `Techincal Blog that covers Javascript and other programming stuffs.`,
+    description: `Techincal Blog that covers programming stuffs.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       twitter: `AbhijitEzhava`,
@@ -51,12 +51,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -118,7 +112,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/app-logo.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
