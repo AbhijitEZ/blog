@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Technical Blog]]></title><description><![CDATA[Techincal Blog that covers Javascript and other programming stuffs.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 29 Jun 2021 10:26:37 GMT</lastBuildDate><item><title><![CDATA[Postgres inside docker]]></title><description><![CDATA[Docker Docker is containerized approach in the current web market, where we can deploy
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blogs]]></title><description><![CDATA[Techincal Blog that covers programming stuffs.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 05 Nov 2021 17:57:40 GMT</lastBuildDate><item><title><![CDATA[Docker for absolute beginner]]></title><description><![CDATA[What docker solves? Docker help in creating the virtual container on any OS inside our local machine. There are already other alternative
+as…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/docker-begineer/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/docker-begineer/</guid><pubDate>Fri, 05 Nov 2021 23:04:03 GMT</pubDate><content:encoded>&lt;h2&gt;What docker solves?&lt;/h2&gt;
+&lt;p&gt;Docker help in creating the virtual container on any OS inside our local machine. There are already other alternative
+as well like VirtualBox, VMWare and so on but docker surpress all of them. Due to its core customization over OS and functionality.
+So important concepts related to Docker are as follow.&lt;/p&gt;
+&lt;h3&gt;Container&lt;/h3&gt;
+&lt;p&gt;They are the building block of docker, think of it as a virtual box completely isolated from outer where it’s job is only to do things it has
+been tasked with.&lt;/p&gt;
+&lt;h3&gt;Images&lt;/h3&gt;
+&lt;p&gt;Images are the blueprint of container. Container are created from images, for eg: an object is created from class where, Image === class.&lt;/p&gt;
+&lt;h3&gt;Volumes&lt;/h3&gt;
+&lt;p&gt;In docker volumes stores the container data in the local machine in order to save the data even when container service is down, Most usefull
+eg is DB data needs to mounted to local machine in order to keep the track of data on container stop.&lt;/p&gt;
+&lt;h3&gt;Dockerfile&lt;/h3&gt;
+&lt;p&gt;This is the main file which would be used to create a Docker Image. Most of the os | language | services are supported by this file.&lt;/p&gt;
+&lt;h3&gt;Docker Compose&lt;/h3&gt;
+&lt;p&gt;This docker compose as a controller of many containers. It can be used to connect all the container within same network, get other container
+data and so on. Not used much in production&lt;/p&gt;
+&lt;h3&gt;Inner keywords used in docker&lt;/h3&gt;
+&lt;h4&gt;Publish Ports&lt;/h4&gt;
+&lt;p&gt;They allow to listen the container port with outside machine &lt;code class=&quot;language-text&quot;&gt;80:8080&lt;/code&gt; where &lt;strong&gt;80&lt;/strong&gt; is local-machine port mapped to &lt;strong&gt;8080&lt;/strong&gt; of container.
+Published ports can be accessible by external containers and services&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;docker&quot;&gt;&lt;pre class=&quot;language-docker&quot;&gt;&lt;code class=&quot;language-docker&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;p 80&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;8080&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Expose&lt;/h4&gt;
+&lt;p&gt;Expose tell the container listens on the stated port during runtime. By default, the EXPOSE instruction does not expose the container’s ports
+to be accessible from the host. In other words, it only makes the stated ports available for inter-container interaction.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;docker&quot;&gt;&lt;pre class=&quot;language-docker&quot;&gt;&lt;code class=&quot;language-docker&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;EXPOSE&lt;/span&gt; 8080&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Postgres inside docker]]></title><description><![CDATA[Docker Docker is containerized approach in the current web market, where we can deploy
 out application on any cloud wihtout much effort…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/docker-postgres/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/docker-postgres/</guid><pubDate>Tue, 29 Jun 2021 22:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;Docker&lt;/h2&gt;
 &lt;p&gt;Docker is containerized approach in the current web market, where we can deploy
 out application on any cloud wihtout much effort. Most of cloub companies like AWS,
